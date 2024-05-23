@@ -1,10 +1,158 @@
-{% extends 'base.html' %} {% block content %} {% load static %}
+]{% extends 'base.html' %} {% block content %} {% load static %}
 <!-- css 파일 -->
 <link
   rel="stylesheet"
   type="text/css"
   href="{% static 'css/main/main_page.css'%}"
 />
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/main/main_page.css'%}"
+/>
+
+
+<body>
+  <div class="frame3"> <!--상단바-->
+    <div class="item">인기신상랭킹</div>
+    <div class="item">입점특가</div>
+    <div class="item">간편한끼</div>
+    <div class="item">요즘간식</div>
+    <div class="item">주방·리빙</div>
+    <div class="item">뷰티</div>
+    <div class="item">패션·잡화</div>
+  </div>
+</body>
+
+<body2>
+  <div class="frame7">
+    <div class="frame7-1">
+      <p>필터</p>
+      <div class="reset" onclick="resetCheckbox()">  
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M8.18717 17.25C6.75662 16.8472 5.58995 16.059 4.68717 14.8854C3.7844 13.7118 3.33301 12.3611 3.33301 10.8333C3.33301 10.0417 3.46495 9.28819 3.72884 8.57292C3.99273 7.85764 4.36773 7.20139 4.85384 6.60417C5.00662 6.4375 5.19412 6.35069 5.41634 6.34375C5.63856 6.33681 5.83995 6.42361 6.02051 6.60417C6.17329 6.75694 6.25315 6.94444 6.26009 7.16667C6.26704 7.38889 6.19412 7.59722 6.04134 7.79167C5.70801 8.22222 5.45106 8.69444 5.27051 9.20833C5.08995 9.72222 4.99967 10.2639 4.99967 10.8333C4.99967 11.9583 5.32954 12.9618 5.98926 13.8438C6.64898 14.7257 7.49967 15.3264 8.54134 15.6458C8.7219 15.7014 8.8712 15.8056 8.98926 15.9583C9.10731 16.1111 9.16634 16.2778 9.16634 16.4583C9.16634 16.7361 9.06912 16.9549 8.87467 17.1146C8.68023 17.2743 8.45106 17.3194 8.18717 17.25ZM11.8122 17.25C11.5483 17.3194 11.3191 17.2708 11.1247 17.1042C10.9302 16.9375 10.833 16.7153 10.833 16.4375C10.833 16.2708 10.892 16.1111 11.0101 15.9583C11.1281 15.8056 11.2775 15.7014 11.458 15.6458C12.4997 15.3125 13.3504 14.7083 14.0101 13.8333C14.6698 12.9583 14.9997 11.9583 14.9997 10.8333C14.9997 9.44444 14.5136 8.26389 13.5413 7.29167C12.5691 6.31944 11.3886 5.83333 9.99967 5.83333H9.93717L10.2705 6.16667C10.4233 6.31944 10.4997 6.51389 10.4997 6.75C10.4997 6.98611 10.4233 7.18056 10.2705 7.33333C10.1177 7.48611 9.92329 7.5625 9.68717 7.5625C9.45106 7.5625 9.25662 7.48611 9.10384 7.33333L7.35384 5.58333C7.27051 5.5 7.21148 5.40972 7.17676 5.3125C7.14204 5.21528 7.12467 5.11111 7.12467 5C7.12467 4.88889 7.14204 4.78472 7.17676 4.6875C7.21148 4.59028 7.27051 4.5 7.35384 4.41667L9.10384 2.66667C9.25662 2.51389 9.45106 2.4375 9.68717 2.4375C9.92329 2.4375 10.1177 2.51389 10.2705 2.66667C10.4233 2.81944 10.4997 3.01389 10.4997 3.25C10.4997 3.48611 10.4233 3.68056 10.2705 3.83333L9.93717 4.16667H9.99967C11.8608 4.16667 13.4372 4.8125 14.7288 6.10417C16.0205 7.39583 16.6663 8.97222 16.6663 10.8333C16.6663 12.3472 16.215 13.6944 15.3122 14.875C14.4094 16.0556 13.2427 16.8472 11.8122 17.25Z" fill="#DDDDDD"/>
+        </svg>
+      <button id="resetbtn">초기화</button>
+      </div> <!--reset 클래스 닫는 태그-->
+    </div> <!--frame7-1 태그 닫음-->
+
+    <div class="category">
+      <div class="c1">카테고리</div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M9.98572 9.13897L6.44405 12.6806C6.30988 12.8148 6.14787 12.8796 5.95801 12.875C5.76815 12.8704 5.60613 12.801 5.47197 12.6667C5.33766 12.5324 5.27051 12.368 5.27051 12.1736C5.27051 11.9791 5.33766 11.8148 5.47197 11.6806L9.49967 7.65273C9.5737 7.5787 9.65009 7.52661 9.72884 7.49648C9.80759 7.46648 9.89322 7.45147 9.98572 7.45147C10.0784 7.45147 10.164 7.46648 10.2428 7.49648C10.3214 7.52661 10.3978 7.5787 10.472 7.65273L14.5136 11.6944C14.6478 11.8287 14.7126 11.9908 14.708 12.1806C14.7034 12.3704 14.634 12.5324 14.4997 12.6667C14.3654 12.801 14.201 12.8681 14.0065 12.8681C13.8121 12.8681 13.6478 12.801 13.5136 12.6667L9.98572 9.13897Z" fill="#999999"/>
+      </svg>
+    </div> <!--카테고리 클래스 닫는 태그-->
+
+
+  <div class="frame8">
+    <div class="frame-8"> 
+      <div class="sidebarnav">
+        <input type="checkbox" id="is" name="category" value="skincare" onchange="updateCategoryFilter()" data-caption="68">
+        <label for="ls1">스킨케어·메이크업</label>
+        <div class="caption">68</div>
+      </div>
+      <div class="sidebarnav">
+        <input type="checkbox" id="ls" name="category" value="lux" onchange="updateCategoryFilter()" data-caption="24">
+        <label for="is">럭셔리뷰티</label>
+        <div class="caption">24</div>
+      </div>
+      <div class="sidebarnav">
+        <input type="checkbox" id="is" name="category" value="gansik" onchange="updateCategoryFilter()" data-caption="28">
+        <label for="is">간식·과자·떡</label>
+        <div class="caption">28</div>
+      </div>
+    </div>
+  </div> <!--frame8 닫는 태그-->
+</div> <!--frame7 닫는 태그-->
+
+<div class="row"><!--세로로 배열하기 위해 묶은 태그-->
+  <div class="SortingBar">
+    <div class="le"></div>
+    <div class="ri">
+        <div class="up">추천순</div>
+        <p>|</p>
+        <p>산성품순</p>
+        <p>|</p>
+        <p>판매량순</p>
+        <p>|</p>
+        <p>혜택순</p>
+        <p>|</p>
+        <p>낮은 가격순</p>
+        <p>|</p>
+        <p>높은 가격순</p>
+        <p>|</p>
+    </div>
+  </div> <!--sortingBar 닫기-->
+
+  <div class="category-filter"> <!--네모박스 선택시 보이는 부분-->
+    <div class="div-selected">
+      <div class="text-categoryfilter"></div>
+      <svg class="cancel" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" onclick="clearCategoryFilter()"> <!--fill:none이 아마 안 보이게 하는 것일듯!-->
+        <path d="M9.99967 11.1668L5.91634 15.2502C5.76356 15.4029 5.56912 15.4793 5.33301 15.4793C5.0969 15.4793 4.90245 15.4029 4.74967 15.2502C4.5969 15.0974 4.52051 14.9029 4.52051 14.6668C4.52051 14.4307 4.5969 14.2363 4.74967 14.0835L8.83301 10.0002L4.74967 5.91683C4.5969 5.76405 4.52051 5.56961 4.52051 5.3335C4.52051 5.09738 4.5969 4.90294 4.74967 4.75016C4.90245 4.59738 5.0969 4.521 5.33301 4.521C5.56912 4.521 5.76356 4.59738 5.91634 4.75016L9.99967 8.8335L14.083 4.75016C14.2358 4.59738 14.4302 4.521 14.6663 4.521C14.9025 4.521 15.0969 4.59738 15.2497 4.75016C15.4025 4.90294 15.4788 5.09738 15.4788 5.3335C15.4788 5.56961 15.4025 5.76405 15.2497 5.91683L11.1663 10.0002L15.2497 14.0835C15.4025 14.2363 15.4788 14.4307 15.4788 14.6668C15.4788 14.9029 15.4025 15.0974 15.2497 15.2502C15.0969 15.4029 14.9025 15.4793 14.6663 15.4793C14.4302 15.4793 14.2358 15.4029 14.083 15.2502L9.99967 11.1668Z" fill="#DDDDDD"/>
+      </svg>
+    </div>
+  </div> <!--카테고리 필터 닫는 태그-->
+
+  <!-- <div class=“container>
+    <div class=“item”>
+      <img src="{{product.image_url}}" style="width: 100%" /> 
+    </div>
+    <div class="got">
+      <button> 
+        <img src="{% static 'assets/icons/cart.svg' %}" id="cart_img"/> 
+        <id="damgi">담기</id>
+      </button>
+    </div>
+    <a href="product/{{product.id}}">
+      <p id="delivery_company">샛별배송</p>
+      <p id="product_name">{{product}}</p>
+      <p id="description">{{product.description}}</p>
+      <p id="origin_price">{{product.origin_price}}원</p>
+      <p id="discount_rate">{{product.discount_rate}}%</p>
+      <p id="discount_price">{{product.discount_price}}원</p>
+    </a>
+  </div>
+  </div> -->
+
+  <div class="itemlist">
+    <div style="display: flex; flex-wrap: wrap; gap: 18px;">
+      {% for product in products %}
+      <div class="product-card">
+        <a href="product/{{product.id}}">
+          <img class = "img-product" src="{{product.image_url}}" alt="{{product.name}}" style="width:100%">
+          <div class = "dam">
+            <svg class = "icon-cart" xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+              <path d="M7.5 22C6.95 22 6.47917 21.8042 6.0875 21.4125C5.69583 21.0208 5.5 20.55 5.5 20C5.5 19.45 5.69583 18.9792 6.0875 18.5875C6.47917 18.1958 6.95 18 7.5 18C8.05 18 8.52083 18.1958 8.9125 18.5875C9.30417 18.9792 9.5 19.45 9.5 20C9.5 20.55 9.30417 21.0208 8.9125 21.4125C8.52083 21.8042 8.05 22 7.5 22ZM17.5 22C16.95 22 16.4792 21.8042 16.0875 21.4125C15.6958 21.0208 15.5 20.55 15.5 20C15.5 19.45 15.6958 18.9792 16.0875 18.5875C16.4792 18.1958 16.95 18 17.5 18C18.05 18 18.5208 18.1958 18.9125 18.5875C19.3042 18.9792 19.5 19.45 19.5 20C19.5 20.55 19.3042 21.0208 18.9125 21.4125C18.5208 21.8042 18.05 22 17.5 22ZM6.65 6L9.05 11H16.05L18.8 6H6.65ZM5.7 4H20.45C20.8333 4 21.125 4.17083 21.325 4.5125C21.525 4.85417 21.5333 5.2 21.35 5.55L17.8 11.95C17.6167 12.2833 17.3708 12.5417 17.0625 12.725C16.7542 12.9083 16.4167 13 16.05 13H8.6L7.5 15H18.5C18.7833 15 19.0208 15.0958 19.2125 15.2875C19.4042 15.4792 19.5 15.7167 19.5 16C19.5 16.2833 19.4042 16.5208 19.2125 16.7125C19.0208 16.9042 18.7833 17 18.5 17H7.5C6.75 17 6.18333 16.6708 5.8 16.0125C5.41667 15.3542 5.4 14.7 5.75 14.05L7.1 11.6L3.5 4H2.5C2.21667 4 1.97917 3.90417 1.7875 3.7125C1.59583 3.52083 1.5 3.28333 1.5 3C1.5 2.71667 1.59583 2.47917 1.7875 2.2875C1.97917 2.09583 2.21667 2 2.5 2H4.125C4.30833 2 4.48333 2.05 4.65 2.15C4.81667 2.25 4.94167 2.39167 5.025 2.575L5.7 4Z" fill="#333333"/>
+            </svg>
+            <div class="text-cart">담기</div>
+          </div>
+
+          <div class = "frame-19">
+            <div id="delivery_company">샛별배송</div>
+            <div id="product-name">{{product.name}}</div>
+            <div id = "description">{{product.description}}</div>
+              <div id="origin_price">{{product.origin_price}}</div>
+              <div class="rrr">
+                <div id="discount_rate">{{product.discount_rate}} %</div>
+                <div id="discount_price"> {{product.discount_price}}</div>
+              </div>
+          
+            
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+    
+    
+
+</div> <!--row(세로로 묶기 위해 만든 태그 닫음)-->
+</body2> 
+
+
+
 
 <!-- 코드 작성시, 아래 부분(script 태그 이전)은 전체 삭제하고 작성하세요 -->
 
@@ -13,9 +161,9 @@
 <!-- 아래와 같은 형식으로 for문을 사용하여 작성하세요 -->
 
 <!-- 데이터 사용 예시 -->
-<div style="display: flex">
-  {% for product in products %}
-  <a href="product/{{product.id}}">
+<!-- <div style="display: flex">
+   {% for product in products %} -->
+  <!-- <a href="product/{{product.id}}">
     <img src="{{product.image_url}}" style="width: 100px" />
     <p>{{product}}</p>
     <p>{{product.description}}</p>
@@ -23,10 +171,11 @@
     <p>{{product.discount_rate}}%</p>
     <p>{{product.discount_price}}원</p>
   </a>
-  {% endfor %}
-</div>
+  {% endfor %} -->
+<!-- </div> -->
 <!-- 데이터 사용 예시 -->
 
 <!-- js 파일 -->
 <script src="{% static 'js/main/main_page.js'%}"></script>
 {% endblock %}
+

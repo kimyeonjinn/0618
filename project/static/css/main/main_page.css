@@ -1,1 +1,299 @@
 /* main page - CSS */
+
+html {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.frame3 {
+    position: relative;
+    top: 50px;
+    border: 1px solid var(--stroke-stroke-2, #E2E2E2);
+    width: 970px;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: 
+    "a b c d "
+    "e f g . ";
+    padding: 30px 40px;
+    gap: 16px 83px;
+}
+
+
+.item:nth-child(1) {
+    grid-area: a;
+}
+
+
+.item:nth-child(1):hover {
+    color: purple;
+}
+
+
+.item:nth-child(2) {
+    grid-area: b;
+}
+
+.item:nth-child(2):hover {
+    color: purple;
+}
+
+
+.item:nth-child(3) {
+    grid-area: c;
+}
+
+.item:nth-child(3):hover {
+    color: purple;
+}
+
+.item:nth-child(4) {
+    grid-area: d;
+}
+
+.item:nth-child(4):hover {
+    color: purple;
+}
+
+.item:nth-child(5) {
+    grid-area: e;
+}
+
+.item:nth-child(5):hover {
+    color: purple;
+}
+.item:nth-child(6) {
+    grid-area: f;
+}
+
+.item:nth-child(6):hover {
+    color: purple;
+}
+
+.item:nth-child(7) {
+    grid-area: g;
+}
+
+.item:nth-child(7):hover {
+    color: purple;
+}
+.body {
+    display: flex;
+}
+
+body2 {
+    display: flex;
+    flex-direction: row;
+    padding-top: 100px; /*패딩 100px씩 줌*/
+    align-items: flex-start;
+    gap: 47px;
+    align-self: stretch;
+}
+/* 여기 위에까지 인기신상랭킹~패션잡화 마우스 호버 효과 css임 지우지 말길 */
+
+.frame7 {
+    display: flex;
+    width: 220px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.frame7-1 {
+    display: flex;
+    padding-bottom: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+    border-bottom: 1px solid var(--stroke-stroke-2, #E2E2E2);
+}
+
+.category {
+    display: flex;
+    height: 52px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.frame8 {
+    display: flex;
+}
+
+.sidebarnav{
+    display: flex;
+    padding-bottom: 16px;
+    align-items: center;
+    gap: 5px;
+}
+
+.caption {
+    color: var(--font-font-3, #DDD);
+/* Caption */
+font-family: Pretendard;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 16px; /* 133.333% */
+}
+
+#resetButton {
+    color: var(--font-font2, #999);
+/* H3 */
+font-family: Pretendard;
+font-size: 15px;
+font-style: normal;
+font-weight: 500;
+line-height: 20px; /* 133.333% */
+}
+
+.SortingBar {
+    display: flex;
+align-items: flex-start;
+flex: 1 0 0;
+padding-bottom: 20px;
+justify-content: space-between;
+align-items: flex-start;
+align-self: stretch;
+
+}
+
+
+.ri /*추천순~높은 가격순*/{
+    display: flex;
+    color: var(--font-font2, #999);
+    /* H3 */
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 133.333% */
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    width: 783px;
+}
+.category-filter{
+    display: none; /*none처리 해주기*/
+    padding: 20px 16px 18px 16px;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+    border: 1px solid var(--stroke-stroke-2, #E2E2E2);
+}
+/*여기 아래부터 db 불러오는 공간입니당*/
+
+.itemlist {
+    display: flex;
+    padding-top: 32px;
+}
+
+.product-card {
+    width:249px;
+    height: 502px;
+}
+.dam {
+    display: flex;
+    height: 36px;
+    padding-top: 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    align-self: stretch;
+    border-radius: 4px;
+border: 1px solid var(--stroke-stroke-2, #E2E2E2);
+}
+
+.rrr {
+    display: flex;
+    gap: 6px;
+}
+
+
+#delivery_company {
+    color: var(--font-font2, #999);
+
+/* B2 */
+font-family: Pretendard;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px; /* 142.857% */
+letter-spacing: -1px;
+}
+
+#product_name {
+    color: var(--font-font-1, #333);
+
+/* B1 */
+font-family: Pretendard;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */
+}
+
+#description {
+    color: var(--font-font2, #999);
+
+/* Caption */
+font-family: Pretendard;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 16px; /* 133.333% */
+}
+
+#origin_price {
+    color: var(--font-font2, #999);
+font-family: Pretendard;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */
+text-decoration: line-through;
+}
+
+#discount_rate {
+    color: var(--point-red, #FA622F);
+
+/* B1-bold */
+font-family: Pretendard;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px; /* 150% */
+}
+
+#discount_price {
+    color: var(--font-font-1, #333);
+
+/* B1-bold */
+font-family: Pretendard;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px; /* 150% */
+}
+/*  여기위로는 귀찮으니 건들지 말길...  */
+
+.up:hover {
+    color:black;
+}
+
+.resetbtn:hover {
+    text-decoration : underline;
+}
+
+.text-categoryfilter {
+    color:purple;
+}
+
+.div-selected {
+    display: flex;
+}
+
