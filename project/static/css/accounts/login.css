@@ -1,1 +1,120 @@
 /* login page - CSS */
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    width: 1050px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+ 
+}
+
+.biglogin {
+    width:340px;
+    height: 216px;
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+}
+
+p {
+    color: #000;
+text-align: right;
+font-family: Pretendard;
+font-size: 28px;
+font-style: normal;
+font-weight: 600;
+line-height: 32px; /* 114.286% */
+letter-spacing: -1px;
+margin-bottom: 32px;
+}
+
+#signup-id {
+    display: flex;
+    height: 46px;
+    padding: 0px 1px 0px 11px;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-radius: 4px;
+border: 1px solid var(--stroke-stroke-1, #CCC);
+}
+
+.container form {
+    margin: 12px;
+}
+
+.find {
+   
+    display: flex;
+width: 340px;
+justify-content: flex-end;
+align-items: center;
+gap: 4px;
+}
+
+.find p {
+    color: var(--font-font-1, #333);
+text-align: right;
+
+/* Caption */
+font-family: Pretendard;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 16px; /* 133.333% */
+
+margin-top: 32px;
+margin-bottom: 48px;
+}
+
+.first {
+    display: flex;
+width: 340px;
+padding: 16px 0px;
+justify-content: center;
+align-items: center;
+border-radius: 4px;
+background: var(--stroke-stroke-2, #E2E2E2);
+
+color: var(--font-font2, #999);
+text-align: center;
+
+/* Btn */
+font-family: Pretendard;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 150% */
+margin-bottom: 12px;
+}
+
+.second {
+    display: flex;
+width: 340px;
+padding: 16px 0px;
+justify-content: center;
+align-items: center;
+border-radius: 4px;
+border: 1px solid var(--point-main, #5E0080);
+color: var(--point-main, #5E0080);
+text-align: center;
+
+/* Btn */
+font-family: Pretendard;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 150% */
+}

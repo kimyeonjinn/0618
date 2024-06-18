@@ -1,6 +1,56 @@
 <!-- 임시 로그인 페이지 -->
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %} {% load static %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/accounts/login.css'%}"
+/>
 <div class="container">
-  <h2>로그인</h2>
-</div>
+  <div class="biglogin">
+    <p>로그인</p>
+    <form id="signup-id">
+      <input type="text" id="username" name="username" placeholder="아이디를 입력해주세요" required>
+    </form>
+    <form id="signup-id">
+      <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요" required>
+    </form> 
+  </div> <!--biglogin 즉 p에서 비밀번호 입력해주세요까지~-->
+ 
+  <div class="find"> <!--아이디/ 비밀번호 찾기라는 뜻-->
+    <p>아이디 찾기 | 비밀번호 찾기</p>
+  </div>
+
+  <button class="first" disabled type="submit">로그인</button>
+  <a href="http://127.0.0.1:8000/accounts/signup/"><button class="second" type="submit">회원가입</button></a>
+
+</div> <!--container 닫는 태그-->
+
+<script>
+ document.addEventListener('DOMContentLoaded', function() {
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const loginButton = document.querySelector('button.first');
+
+    function validateForm() {
+        const isUsernameFilled = usernameInput.value.trim() !== '';
+        const isPasswordFilled = passwordInput.value.trim() !== '';
+
+        if (isUsernameFilled && isPasswordFilled) {
+            loginButton.disabled = false;
+            loginButton.style.backgroundColor = 'purple';
+            loginButton.style.color = 'white'; // 여기도 추가
+            loginButton.style.cursor = 'pointer';
+        } else {
+            loginButton.disabled = true;
+            loginButton.style.textColor = 'white';
+            loginButton.style.cursor = 'not-allowed';
+        }
+    }
+
+    usernameInput.addEventListener('input', validateForm);
+    passwordInput.addEventListener('input', validateForm);
+});
+// 여기위에까지는 건들 ㄴㄴ 건들면 골치 아파짐 입력 필드가 채워졌을 때 색상 변화 부분임
+
+</script>
 {% endblock %}

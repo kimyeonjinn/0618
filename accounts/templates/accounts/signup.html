@@ -1,6 +1,164 @@
-<!-- 임시 회원가입 페이지 -->
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %} {% load static %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/accounts/signup.css'%}"
+/>
+
 <div class="container">
-  <h2>회원가입</h2>
-</div>
+  <!-- 폼 -->
+  <div class="smallframe"> <!--회원가입 창 둘러싼 작은 네모-->
+    <div id="ssignup">회원가입</div>
+      <hr class="first"> <!--구분선을 추가한다는 의미임-->
+
+    <div class="idpc"> <!--아이디, 패스워드, 패스워드 체크 칸-->
+      <div class="bigid"> <!--아이디랑 아이디 입력 칸 묶는 div-->
+        <div id="id">아이디</div>
+        <form id="signup-id" action="{% url 'accounts:login' %}" method="POST">
+          {% csrf_token %}
+          <input type="text" id="username" name="username" placeholder="아이디를 입력해주세요" required>
+        </form>
+      </div> <!--bigid 닫는 태그-->
+
+      <div class="bigpassword">
+        <div id="id">비밀번호</div>
+          <div class="right">
+         
+              <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요" required>
+         
+              <div class="textandul">
+                <ul class="bullet-list">
+                  <li>비밀번호를 8자 이상으로 작성해주세요.</li>
+                  <li>영문 대소문자, 숫자, 특수문자를 하나 이상 포함해주세요.</li>
+                  <li>사용가능 특수문자 @!?-_</li>
+              </ul>
+              </div> <!--textandul 닫는 태그-->
+              <div id="password-requirements-warning" style="color: red; display: none;">
+               비밀번호 조건을 충족해주세요!
+              </div>
+          </div>
+      </div>
+
+      <div class="bigcheck">
+        <div id="id">비밀번호 확인</div>
+          <div class="bigcheckright">
+          
+          
+              <input type="password" id="check" name="check" placeholder="비밀번호를 한번 더 입력해주세요" required>
+            </form>
+            <div id="password-match-warning" style="color: red; display: none;">
+              비밀번호가 일치하지 않습니다!
+            </div>
+          </div>
+      </div>
+    </div> <!--idpc 닫는 태그-->
+    <hr class="second">
+    
+    <form>
+    <button id="bbutton" type="submit" action="{% url 'accounts:signup' %}"  method ="post" >가입하기</button>
+    {% csrf_token %}
+    </form>
+  </div> <!--smallframe 닫는 태그-->
+  
+</div> <!--container 닫는 태그-->
+
+{% if error %}
+<div style="color: red">{{ error }}</div>
+{% endif %}
+
+<script>
+  // js
+  document.addEventListener('DOMContentLoaded', function() {
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('check');
+    const passwordMatchWarning = document.getElementById('password-match-warning');
+
+    function checkPasswords() {
+      if (passwordInput.value !== confirmPasswordInput.value) {
+        passwordMatchWarning.style.display = 'block';
+      } else {
+        passwordMatchWarning.style.display = 'none';
+      }
+    }
+
+    passwordInput.addEventListener('input', checkPasswords);
+    confirmPasswordInput.addEventListener('input', checkPasswords);
+  });
+// 여기 위에까지 비밀번호가 일치하지 않습니다 js 코드 위에 건들 ㄴㄴ
+
+document.addEventListener('DOMContentLoaded', function() {
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('check');
+    const passwordMatchWarning = document.getElementById('password-match-warning');
+    const passwordRequirementsWarning = document.getElementById('password-requirements-warning');
+
+    function validatePassword(password) {
+      const regex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@!?-_])[A-Za-z\d@!?-_]{8,}$/;
+      return regex.test(password);
+    }
+
+    function checkPasswords() {
+      const password = passwordInput.value;
+      const confirmPassword = confirmPasswordInput.value;
+
+      if (!validatePassword(password)) {
+        passwordRequirementsWarning.style.display = 'block';
+        passwordMatchWarning.style.display = 'block';
+        passwordMatchWarning.textContent = '';
+      } else if (password !== confirmPassword) {
+        passwordRequirementsWarning.style.display = 'none';
+        passwordMatchWarning.style.display = 'block';
+        passwordMatchWarning.textContent = '비밀번호가 일치하지 않습니다!';
+      } else {
+        passwordRequirementsWarning.style.display = 'none';
+        passwordMatchWarning.style.display = 'none';
+      }
+    }
+
+    passwordInput.addEventListener('input', (event) => {
+      checkPasswords();
+    });
+
+    confirmPasswordInput.addEventListener('input', (event) => {
+      checkPasswords();
+    });
+  });
+
+  // 위까지는 ... 뭐 얼추 완료했다고 할 수 있음... 근데 참 어렵당~ 화이팅 건들 ㄴㄴ
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const checkpasswordInput = document.getElementById('check');
+    const loginButton = document.querySelector('#bbutton');
+
+    function validateForm() {
+        const isUsernameFilled = usernameInput.value.trim() !== '';
+        const isPasswordFilled = passwordInput.value.trim() !== '';
+        const ischeckpasswordFilled =checkpasswordInput.value.trim() !== '';
+        const isPasswordMatching = passwordInput.value === checkpasswordInput.value; // 수정된 부분: 비밀번호 일치 여부 확인
+
+        if (isUsernameFilled && isPasswordFilled && ischeckpasswordFilled && isPasswordMatching) {
+            loginButton.disabled = false;
+            loginButton.style.backgroundColor = 'purple';
+            loginButton.style.color = 'white'; // 여기도 추가
+            loginButton.style.cursor = 'pointer';
+        } else {
+            loginButton.disabled = true;
+            loginButton.style.textColor = 'white';
+            loginButton.style.cursor = 'not-allowed';
+        }
+    }
+
+    usernameInput.addEventListener('input', validateForm);
+    passwordInput.addEventListener('input', validateForm);
+    checkpasswordInput.addEventListener('input', validateForm);
+});
+// 위까지 건들 ㄴㄴ 버튼 활성화까지 완료함!!!
+</script>
+
+{% if error %}
+<div style="color: red">{{ error }}</div>
+{% endif %}
 {% endblock %}
