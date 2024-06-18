@@ -10,11 +10,12 @@
     <p>로그인</p>
     <form id="signup-id" action="{% url 'accounts:login' %}" method="POST">
       {% csrf_token %}
+
+     <div class="signupiid">
       <input type="text" id="username" name="username" placeholder="아이디를 입력해주세요" required>
-    
-      <div id="signup-id">
       <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요" required>
-      </div>
+     </div>
+     
   </div> <!--biglogin 즉 p에서 비밀번호 입력해주세요까지~-->
  
   <div class="find"> <!--아이디/ 비밀번호 찾기라는 뜻-->

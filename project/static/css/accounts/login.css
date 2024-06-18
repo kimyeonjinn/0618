@@ -39,7 +39,7 @@ letter-spacing: -1px;
 margin-bottom: 32px;
 }
 
-#signup-id {
+/* #signup-id {
     display: flex;
     height: 46px;
     padding: 0px 1px 0px 11px;
@@ -51,7 +51,7 @@ margin-bottom: 32px;
 flex-direction: column;
 border: 1px solid var(--stroke-stroke-1, #CCC);
 
-}
+} */
 
 
 
@@ -139,7 +139,37 @@ flex-shrink: 0;
 align-self: stretch;
 }
 
+#username {
+    display: flex;
+    height: 46px;
+    padding: 0px 1px 0px 11px;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-radius: 4px;
+    border: 1px solid var(--stroke-stroke-1, #CCC);
+    width: 328px;
+    margin-top: 12px;
+}
+
 #password {
+    display: flex;
+height: 46px;
+padding: 0px 1px 0px 11px;
+align-items: center;
+gap: 10px;
+flex-shrink: 0;
+align-self: stretch;
+border-radius: 4px;
+border: 1px solid var(--stroke-stroke-1, #CCC);
+width: 328px;
+margin-top: 12px;
+}
+
+
+
+.textinput {
     display: flex;
     display: flex;
 height: 46px;
