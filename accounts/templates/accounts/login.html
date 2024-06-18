@@ -8,19 +8,21 @@
 <div class="container">
   <div class="biglogin">
     <p>로그인</p>
-    <form id="signup-id">
+    <form id="signup-id" action="{% url 'accounts:login' %}" method="POST">
+      {% csrf_token %}
       <input type="text" id="username" name="username" placeholder="아이디를 입력해주세요" required>
-    </form>
-    <form id="signup-id">
+    
+      <div id="signup-id">
       <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요" required>
-    </form> 
+      </div>
   </div> <!--biglogin 즉 p에서 비밀번호 입력해주세요까지~-->
  
   <div class="find"> <!--아이디/ 비밀번호 찾기라는 뜻-->
     <p>아이디 찾기 | 비밀번호 찾기</p>
   </div>
 
-  <button class="first" disabled type="submit">로그인</button>
+  <button class="first" type="submit">로그인</button>
+  </form>
   <a href="http://127.0.0.1:8000/accounts/signup/"><button class="second" type="submit">회원가입</button></a>
 
 </div> <!--container 닫는 태그-->

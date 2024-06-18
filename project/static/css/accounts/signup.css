@@ -9,7 +9,6 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
     width: 1050px;
     height: 470px;
     display: flex;
@@ -23,7 +22,6 @@ html {
     flex-direction: column;
     align-items: center;
     gap: 32px;
-    border: 1px solid blue;
     width: 640px;
     height: 382px;
 }
@@ -55,7 +53,6 @@ hr.first {
     align-self: stretch;
     width: 640px;
     height: 254px;
-    border: 1px solid green;
 }
 
 .bigid {
@@ -66,7 +63,6 @@ align-items: flex-start;
 align-self: stretch;
 width: 600px;
 height: 46px;
-border: 1px solid pink;
 }
 
 .bigpassword {
@@ -77,7 +73,9 @@ padding: 10px 20px;
 justify-content: center;
 align-items: flex-start;
 align-self: stretch;
-border: 1px solid purple;
+
+
+
 }
 
 
@@ -90,10 +88,10 @@ padding: 10px 20px;
 justify-content: center;
 align-items: flex-start;
 align-self: stretch;
-border: 1px solid rgb(0, 183, 255);
+
 }
 
-.bigcheckright {
+.bigpassword.right {
     display: flex;
     flex-direction: column;
 }

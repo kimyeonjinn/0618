@@ -48,8 +48,12 @@ margin-bottom: 32px;
     flex-shrink: 0;
     align-self: stretch;
     border-radius: 4px;
+flex-direction: column;
 border: 1px solid var(--stroke-stroke-1, #CCC);
+
 }
+
+
 
 .container form {
     margin: 12px;
@@ -117,4 +121,31 @@ font-size: 16px;
 font-style: normal;
 font-weight: 500;
 line-height: 24px; /* 150% */
+}
+
+#textid {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    display: flex;
+    display: flex;
+height: 46px;
+padding: 0px 1px 0px 11px;
+align-items: center;
+gap: 10px;
+flex-shrink: 0;
+align-self: stretch;
+}
+
+#password {
+    display: flex;
+    display: flex;
+height: 46px;
+padding: 0px 1px 0px 11px;
+align-items: center;
+gap: 10px;
+flex-shrink: 0;
+align-self: stretch;
 }

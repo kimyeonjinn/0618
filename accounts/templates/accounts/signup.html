@@ -15,18 +15,18 @@
     <div class="idpc"> <!--아이디, 패스워드, 패스워드 체크 칸-->
       <div class="bigid"> <!--아이디랑 아이디 입력 칸 묶는 div-->
         <div id="id">아이디</div>
-        <form id="signup-id" action="{% url 'accounts:login' %}" method="POST">
+        <form id="signup-id" action="{% url 'accounts:signup' %}" method="POST">
           {% csrf_token %}
           <input type="text" id="username" name="username" placeholder="아이디를 입력해주세요" required>
-        </form>
+      
       </div> <!--bigid 닫는 태그-->
 
       <div class="bigpassword">
         <div id="id">비밀번호</div>
           <div class="right">
-         
+            <div id="signup-id">
               <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요" required>
-         
+            </div>
               <div class="textandul">
                 <ul class="bullet-list">
                   <li>비밀번호를 8자 이상으로 작성해주세요.</li>
@@ -43,22 +43,19 @@
       <div class="bigcheck">
         <div id="id">비밀번호 확인</div>
           <div class="bigcheckright">
-          
-          
-              <input type="password" id="check" name="check" placeholder="비밀번호를 한번 더 입력해주세요" required>
-            </form>
+            <div id="signup-id">
+              <input type="password" id="check" name="password2" placeholder="비밀번호를 한번 더 입력해주세요" required>
+            </div>
             <div id="password-match-warning" style="color: red; display: none;">
               비밀번호가 일치하지 않습니다!
             </div>
           </div>
       </div>
     </div> <!--idpc 닫는 태그-->
+
     <hr class="second">
-    
-    <form>
-    <button id="bbutton" type="submit" action="{% url 'accounts:signup' %}"  method ="post" >가입하기</button>
-    {% csrf_token %}
-    </form>
+    <button id="bbutton" type="submit">가입하기</button>
+  </form>
   </div> <!--smallframe 닫는 태그-->
   
 </div> <!--container 닫는 태그-->
